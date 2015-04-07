@@ -1,0 +1,19 @@
+<h2>Kurser jag har läst</h2> 
+<a ng-click="toggleProgrammingCourses()">{{coursesShowing}}</a>
+<div>
+	<table class="table">
+		<tr>
+			<td><h4>Kurskod</h4></td>
+			<td><h4>Namn</h4></td>
+			<td><h4>hp</h4></td>
+			<td><h4>Datum avklarad</h4></td>
+		</tr>
+		<div>
+		<tr ng-repeat="course in courses">
+			<td>{{course.code}}</td>
+			<td><a href="#/courses/{{course.code}}">{{course.name}}</a></td>
+			<td>{{course.hp}}hp</td>
+			<td>{{course.date}}</td>
+		</tr>
+	</table>	
+</div>
