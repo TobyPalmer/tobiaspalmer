@@ -355,6 +355,7 @@ module.exports = function (grunt) {
     protractor: {
       options: {
         keepAlive: true,
+        strArgs: 'seleniumServerJar',
         configFile: "test/e2e.conf.js"
       },
       run: {}
