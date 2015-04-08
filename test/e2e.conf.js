@@ -4,6 +4,7 @@ exports.config = {
   // The address of a running selenium server.
   // seleniumAddress: 'http://localhost:4444/wd/hub',
   seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar',
+  seleniumPort: 36422,
 
   // Base url
   baseUrl: 'http://localhost:9001',
