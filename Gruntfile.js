@@ -353,12 +353,15 @@ module.exports = function (grunt) {
       }
     },
     protractor: {
-      options: {
-        keepAlive: true,
-        args: {seleniumServerJar: '/node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar'},
-        configFile: "test/e2e.conf.js"
-      },
-      run: {}
+        options: {
+          configFile: "/test/e2e.conf.js", // Default config file 
+          keepAlive: true, // If false, the grunt process stops when the test fails. 
+          noColor: false, // If true, protractor will not use colors in its output. 
+          args: {
+            // Arguments passed to the command 
+          }
+        },
+        all: {}
     }
   });
 
