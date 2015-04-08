@@ -355,7 +355,7 @@ module.exports = function (grunt) {
     protractor: {
       options: {
         keepAlive: true,
-        args: {seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar'},
+        args: {seleniumServerJar: '/node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar'},
         configFile: "test/e2e.conf.js"
       },
       run: {}
