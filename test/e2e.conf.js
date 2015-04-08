@@ -2,8 +2,8 @@
 
 exports.config = {
   // The address of a running selenium server.
-  // seleniumAddress: 'http://localhost:4444/wd/hub',
-  seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  // seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar',
 
   // Base url
   baseUrl: 'http://localhost:9001',
@@ -14,11 +14,6 @@ exports.config = {
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
     'browserName': 'chrome'
-    "chromeOptions": {
-        binary: "node_modules/protractor/selenium/chromedriver.exe",
-        args: [],
-        extensions: [],
-    }
   },
 
   // Suites
