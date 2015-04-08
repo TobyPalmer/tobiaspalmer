@@ -14,6 +14,11 @@ exports.config = {
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
     'browserName': 'chrome'
+    "chromeOptions": {
+        binary: "node_modules/protractor/selenium/chromedriver.exe",
+        args: [],
+        extensions: [],
+    }
   },
 
   // Suites
