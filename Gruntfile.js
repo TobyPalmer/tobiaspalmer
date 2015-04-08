@@ -362,6 +362,15 @@ module.exports = function (grunt) {
           args: {
             // Arguments passed to the command 
           }
+        },
+        mytest: {
+          options: {
+            configFile: "/test/e2e.conf.js",
+            keepAlive: true,
+            args: {
+
+            }
+          }
         }
     }
   });
@@ -392,7 +401,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'protractor'
+    'protractor:mytest'
   ]);
 
   grunt.registerTask('build', [
