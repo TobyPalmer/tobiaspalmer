@@ -6,7 +6,7 @@ chai.use(chaiAsPromised);
 var expect = chai.expect;
 var should = chai.should;
 
-var aweb = element.all(by.repeater('course in courses')).get(30);
+var aweb = element.all(by.repeater('course in courses')).get(30).element(by.css('a'));
 
 describe('basictest', function(){
 
@@ -27,7 +27,7 @@ describe('basictest', function(){
 	});
 
 	it('Should be on aweb page', function(){
-		expect(browser.getCurrentUrl()).to.eventually.equal(browser.baseUrl + '/#/courses/TDDD27');
+		expect(browser.getCurrentUrl()).to.eventually.equal(browser.baseUrl + '/#/courses/TNM034');
 	});
 
 });
