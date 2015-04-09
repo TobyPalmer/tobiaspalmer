@@ -43,7 +43,7 @@ else{
   exports.config.chromeDriver  = '/usr/bin/google-chrome';
 }
 
-var json = require('./package.json');
+var json = require('.././package.json');
 var path = require('path');
 
 module.exports = {
