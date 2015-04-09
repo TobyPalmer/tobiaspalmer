@@ -39,3 +39,7 @@ exports.config = {
 if (process.env.SNAP_CI) {
   exports.config.chromeDriver  = '/usr/local/bin/chromedriver';
 }
+
+if (process.env.TRAVIS_CI) {
+  exports.config.chromeDriver  = '/usr/local/bin/chromedriver';
+}
