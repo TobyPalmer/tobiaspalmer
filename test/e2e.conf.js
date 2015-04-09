@@ -2,8 +2,8 @@
 
 exports.config = {
   // The address of a running selenium server.
-  seleniumAddress: 'http://localhost:4444/wd/hub',
-  // seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar',
+  // seleniumAddress: 'http://localhost:4444/wd/hub',
+  seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar',
   // seleniumAddress: 'http://127.0.0.1:36422/wd/hub',
 
   // Base url
@@ -42,3 +42,11 @@ if (process.env.SNAP_CI) {
 else{
   exports.config.chromeDriver  = '/usr/bin/google-chrome';
 }
+
+var json = require('./package.json');
+var path = require('path');
+
+module.exports = {
+  path: path.resolve(__dirname, 'jar/selenium-server-standalone-' + json.version + '.jar'),
+  version: json.version
+};
