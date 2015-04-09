@@ -14,7 +14,7 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    'browserName': 'firefox'
+    'browserName': 'chrome'
   },
 
   // Suites
@@ -39,7 +39,6 @@ exports.config = {
 if (process.env.SNAP_CI) {
   exports.config.chromeDriver  = '/usr/local/bin/chromedriver';
 }
-
-if (process.env.TRAVIS_CI) {
-  exports.config.chromeDriver  = '/usr/local/bin/chromedriver';
+else{
+  exports.config.chromeDriver  = '/usr/bin/google-chrome';
 }
