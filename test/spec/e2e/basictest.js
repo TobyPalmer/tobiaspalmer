@@ -16,4 +16,8 @@ describe('basictest', function(){
 		expect(browser.getCurrentUrl()).to.eventually.equal(browser.baseUrl + '/#/courses');
 	});
 
+	it('should do nothing', function(){
+
+	});
+
 });
