@@ -2,8 +2,8 @@
 
 exports.config = {
   // The address of a running selenium server.
-  // seleniumAddress: 'http://localhost:4444/wd/hub',
-  seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  // seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar',
 
   // Base url
   baseUrl: 'http://localhost:9001',
@@ -38,6 +38,6 @@ exports.config = {
 if (process.env.SNAP_CI) {
   exports.config.chromeDriver  = '/usr/local/bin/chromedriver';
 }
-else{
-  exports.config.chromeDriver  = '/usr/bin/google-chrome';
-}
+// else{
+//   exports.config.chromeDriver  = '/usr/bin/google-chrome';
+// }
