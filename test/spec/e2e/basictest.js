@@ -29,4 +29,5 @@ describe('basictest', function(){
 	it('Should be on aweb page', function(){
 		expect(browser.getCurrentUrl()).to.eventually.equal(browser.baseUrl + '/#/courses/TNM034');
 	});
+	
 });
