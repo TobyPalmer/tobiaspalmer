@@ -17,6 +17,7 @@ angular.module('tobiaspalmerApp')
 
 		$scope.weatherData = {};
 		$scope.currentWeather = {};
+    var currentHour;
 
 
 	   	weatherService.getWeather().then(function(data){
@@ -31,9 +32,24 @@ angular.module('tobiaspalmerApp')
    			//for some reason it is not possible to only get HH
    			//it becomes unix time = 0
    			var _date = $filter('date')(new Date(),'HH:mm');
-   			var currentHour = _date[0] + _date[1];
 
-   			return currentHour-7;
+        var referencetime;
+
+        if($scope.weatherData.referenceTime[11] == 0){
+            referencetime = $scope.weatherData.referenceTime[12]
+        }
+        else{
+            referencetime = $scope.weatherData.referenceTime[11] + $scope.weatherData.referenceTime[12];
+        }
+
+        if(_date[0] == 0){
+          currentHour = _date[1];
+        }
+        else{
+          currentHour = _date[0] + _date[1];
+        }
+   			
+   			return currentHour-referencetime;
 
    		}
 
@@ -46,20 +62,26 @@ angular.module('tobiaspalmerApp')
    		}
 
    		$scope.frisbee = function(){
-   			var windLimit = 4;
-   			var tempLimit = 10;
-   			if($scope.currentWeather.t < tempLimit && $scope.currentWeather.ws > windLimit){
-   				return "Är du helt galen!? Det både blåser och är kallt!"
-   			}
-   			else if($scope.currentWeather.t >=tempLimit && $scope.currentWeather.ws > windLimit){
-   				return "Det är ju tillräckligt varmt men din frisbee kommer blåsa iväg!"
-   			}
-   			else if($scope.currentWeather.t < tempLimit && $scope.currentWeather.ws <= windLimit){
-   				return "Det är ju svinkallt men det blåser ju inte så mycket!"
-   			}
-   			else{
-   				return "Det är ju perfekt frisbeegolfväder! Vad väntar du på?"
-   			}
+     			var windLimit = 4;
+     			var tempLimit = 10;
+
+          if(currentHour < 21 && currentHour > 6){
+         			if($scope.currentWeather.t < tempLimit && $scope.currentWeather.ws > windLimit){
+         				return "Är du helt galen!? Det både blåser och är kallt!"
+         			}
+         			else if($scope.currentWeather.t >=tempLimit && $scope.currentWeather.ws > windLimit){
+         				return "Det är ju tillräckligt varmt men din frisbee kommer blåsa iväg!"
+         			}
+         			else if($scope.currentWeather.t < tempLimit && $scope.currentWeather.ws <= windLimit){
+         				return "Det är ju svinkallt men det blåser ju inte så mycket!"
+         			}
+         			else{
+         				return "Det är ju perfekt frisbeegolfväder! Vad väntar du på?"
+         			}
+          }
+          else{
+              return "Nu är det väl ändå för mörkt för att spela?"
+          }
    		}
 
    		

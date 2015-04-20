@@ -9,7 +9,6 @@
  */
 angular.module('tobiaspalmerApp')
   .controller('MenuCtrl', function ($scope, $location) {
-
     $scope.isActive = function(path) {
 	    if ($location.path() == path) {
 	      return "active"
@@ -17,5 +16,4 @@ angular.module('tobiaspalmerApp')
 	      return ""
 	    }
 	}
-
-  });
+});

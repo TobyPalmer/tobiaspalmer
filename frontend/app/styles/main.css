@@ -92,4 +92,12 @@ body {
     background-color: #ccc;
     border-color: #ccc;
   }
+
+  .nounderline:hover {
+    text-decoration: none;
+  }
+
+  .nounderline:active {
+    text-decoration: none;
+  }
 }
