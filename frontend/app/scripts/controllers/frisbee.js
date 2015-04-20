@@ -8,7 +8,10 @@
  * Controller of the tobiaspalmerApp
  */
 angular.module('tobiaspalmerApp')
-	.controller('FrisbeeCtrl', function ($scope, $http, $q, weatherService,$filter) {
+    .config(function($httpProvider){
+    delete $httpProvider.defaults.headers.common['*'];
+  })
+	.controller('FrisbeeCtrl', function ($scope, $http, $q, weatherService, $filter) {
 		var Latitude = 58.59;	
 		var Longitude = 16.18;
 
@@ -61,6 +64,7 @@ angular.module('tobiaspalmerApp')
 
    		
 	})
+
 
 
   	.factory('weatherService', ['$http','$q', function($http, $q) {
