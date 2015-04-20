@@ -36,6 +36,10 @@ angular
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl'
       })
+      .when('/frisbee', {
+        templateUrl: 'views/frisbee.html',
+        controller: 'FrisbeeCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
