@@ -19,7 +19,8 @@ exports.config = {
 
   // Suites
   suites: {
-    basictest: ['spec/e2e/*.js']
+    // basictest: ['spec/e2e/*.js'],
+    kubetest: ['spec/e2e/kube.js']
   },
 
   // Before tests
