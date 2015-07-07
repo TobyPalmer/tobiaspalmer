@@ -1,6 +1,20 @@
 <!doctype html>
 <html class="no-js">
   <head>
+
+    <!-- Begin Inspectlet Embed Code -->
+    <script type="text/javascript" id="inspectletjs">
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 1959724809]);
+    (function() {
+    function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+    if (window.attachEvent) window.attachEvent('onload', __ldinsp);
+    else window.addEventListener('load', __ldinsp, false);
+    })();
+    </script>
+    <!-- End Inspectlet Embed Code -->
+
+    
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -23,12 +37,13 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/">Home</a></li>
-          <li><a ng-href="#/courses">Courses</a></li>
-          <li><a ng-href="#/contact">Contact</a></li>
+        <ul class="nav nav-pills pull-right" ng-controller="MenuCtrl">
+          <li ng-class="isActive('/')"><a ng-href="#/">Home</a></li>
+          <li ng-class="isActive('/courses')"><a ng-href="#/courses">Courses</a></li>
+          <li ng-class="isActive('/contact')"><a ng-href="#/contact">Contact</a></li>
+          <li ng-class="isActive('/frisbee')"><a ng-href="#/frisbee">Frisbee</a></li>
         </ul>
-        <h3 class="text-muted">tobiaspalmer</h3>
+        <a class="nounderline" ng-href="#/"><h3 class="text-muted">tobiaspalmer.se</h3></a>
       </div>
 
       <div ng-view=""></div>
@@ -78,6 +93,9 @@
         <script src="scripts/controllers/course.js"></script>
         <script src="scripts/controllers/CourseService.js"></script>
         <script src="scripts/controllers/contact.js"></script>
+        <script src="scripts/controllers/frisbee.js"></script>
+        <script src="scripts/controllers/menu.js"></script>
+        <script src="scripts/controllers/deriveString.js"></script>
         <!-- endbuild -->
 </body>
 </html>

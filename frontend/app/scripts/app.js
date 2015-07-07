@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+ 
 angular
   .module('tobiaspalmerApp', [
     'ngAnimate',
@@ -34,6 +35,10 @@ angular
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl'
+      })
+      .when('/frisbee', {
+        templateUrl: 'views/frisbee.html',
+        controller: 'FrisbeeCtrl'
       })
       .otherwise({
         redirectTo: '/'

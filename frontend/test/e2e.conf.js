@@ -5,6 +5,7 @@ exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
   // seleniumServerJar: '../node_modules/selenium/lib/runner/selenium-server-standalone-2.20.0.jar',
 
+
   // Base url
   baseUrl: 'http://localhost:9001',
 
@@ -18,7 +19,8 @@ exports.config = {
 
   // Suites
   suites: {
-    basictest: ['spec/e2e/*.js']
+    // basictest: ['spec/e2e/*.js'],
+    kubetest: ['spec/e2e/kube.js']
   },
 
   // Before tests

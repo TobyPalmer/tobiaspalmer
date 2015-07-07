@@ -7,6 +7,7 @@
  * # CoursesCtrl
  * Controller of the tobiaspalmerApp
  */
+ 
 angular.module('tobiaspalmerApp')
     .controller('CourseCtrl', function ($scope, CourseService, $route) {
 
