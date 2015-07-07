@@ -16,5 +16,13 @@ angular.module('tobiaspalmerApp')
 			$scope.theText = "Jocke är en slyna";
 		}
 
+		$scope.deriveThis = function(theString){
+			$scope.theText = derive(theString);
+		}
+
+		$scope.integrateThis = function(theString){
+			$scope.theText = integrate(theString);
+		}
+
 	});
 
