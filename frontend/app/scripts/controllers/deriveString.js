@@ -51,6 +51,3 @@ var integrate = function(theString){
 
 	return stringToReturn;
 };
-
-console.log("derived: " + derive("love"));
-console.log("integrated :" + integrate("love"));

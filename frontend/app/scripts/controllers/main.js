@@ -12,10 +12,6 @@ angular.module('tobiaspalmerApp')
 		
 		$scope.theText = "Vill du veta en hemlis?";
 
-		$scope.getSecret = function(){
-			$scope.theText = "Jocke är en slyna";
-		}
-
 		$scope.deriveThis = function(theString){
 			$scope.theText = derive(theString);
 		}

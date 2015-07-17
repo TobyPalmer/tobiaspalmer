@@ -24,6 +24,14 @@ body {
   padding-bottom: 19px;
 }
 
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #337ab7;
+  background-color: #ffffff;
+  font-size: 18px;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
