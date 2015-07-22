@@ -30,7 +30,7 @@ angular.module('tobiaspalmerApp')
             languages: ["C++"],
             frameworks: [""],
             video: "",
-            description:""
+            description:"Programming course to learn the basics in programming"
     	},
     	{
     		code:"TNA002",
@@ -500,6 +500,38 @@ angular.module('tobiaspalmerApp')
                     }
                 }
             }
+        };
+
+        this.getProgrammingLanguages = function(){
+            var programmingLanguages = [];
+            for (var key in courses) {
+                if (courses.hasOwnProperty(key)) {
+                    var obj = courses[key];
+                    if(obj.languages[0] != ""){
+                        for(var i = 0; i < obj.languages.length; i++){
+                            programmingLanguages.push(obj.languages[i]);
+                        }
+                    }
+                }
+            }
+
+            return programmingLanguages;
+        };
+
+        this.getProgrammingFrameworks = function(){
+            var programmingFrameworks = [];
+            for (var key in courses) {
+                if (courses.hasOwnProperty(key)) {
+                    var obj = courses[key];
+                    if(obj.frameworks[0] != ""){
+                        for(var i = 0; i < obj.frameworks.length; i++){
+                            programmingFrameworks.push(obj.frameworks[i]);
+                        }
+                    }
+                }
+            }
+
+            return programmingFrameworks;
         };
 
   });

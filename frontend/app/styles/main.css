@@ -32,6 +32,20 @@ body {
   font-size: 18px;
 }
 
+.languages, .frameworks {
+  display: block;
+  background-color: #aaaaaa;
+/*  width: 40%;*/
+}
+
+.languages {
+  /*float:left;*/
+}
+
+.frameworks {
+
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;

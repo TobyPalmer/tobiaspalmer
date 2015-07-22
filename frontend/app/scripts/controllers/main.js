@@ -8,17 +8,32 @@
  * Controller of the tobiaspalmerApp
  */
 angular.module('tobiaspalmerApp')
-	.controller('MainCtrl', function ($scope) {
+	.controller('MainCtrl', function ($scope, CourseService, $sce) {
 		
-		$scope.theText = "Vill du veta en hemlis?";
+ 		$scope.profilePic = $sce.trustAsResourceUrl('../images/toby.jpg');
 
-		$scope.deriveThis = function(theString){
-			$scope.theText = derive(theString);
-		}
+		var lang = CourseService.getProgrammingLanguages();
+		var fw = CourseService.getProgrammingFrameworks();
 
-		$scope.integrateThis = function(theString){
-			$scope.theText = integrate(theString);
-		}
+		var filterDuplicates = function(array){
+			var temp = [];
+			for(var i = 0; i < array.length; i++){
+				var found = false;
+				for(var j = 0; j < temp.length; j++){
+					if(array[i] == temp[j]){
+						found = true;
+					}
+				}
+				if(!found)
+					temp.push(array[i]);
+			}
+			
+			return temp;
+		};
+		$scope.languages = filterDuplicates(lang);
+		$scope.frameworks = filterDuplicates(fw);
 
-	});
+
+
+});
 

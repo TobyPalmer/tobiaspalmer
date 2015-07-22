@@ -40,6 +40,10 @@ angular
         templateUrl: 'views/frisbee.html',
         controller: 'FrisbeeCtrl'
       })
+      .when('/derive', {
+        templateUrl: 'views/derive.html',
+        controller: 'DeriveCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
