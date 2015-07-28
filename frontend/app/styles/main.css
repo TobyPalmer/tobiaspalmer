@@ -32,9 +32,13 @@ body {
   font-size: 18px;
 }
 
+.profilepic {
+  height:100%;
+}
+
 .languages, .frameworks {
-  display: block;
-  background-color: #aaaaaa;
+  /*display: block;*/
+  /*background-color: #aaaaaa;*/
 /*  width: 40%;*/
 }
 

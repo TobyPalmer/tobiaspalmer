@@ -10,7 +10,7 @@
 angular.module('tobiaspalmerApp')
 	.controller('MainCtrl', function ($scope, CourseService, $sce) {
 		
- 		$scope.profilePic = $sce.trustAsResourceUrl('../images/toby.jpg');
+ 		$scope.profilePic = $sce.trustAsResourceUrl('./images/toby.jpg');
 
 		var lang = CourseService.getProgrammingLanguages();
 		var fw = CourseService.getProgrammingFrameworks();

@@ -62,14 +62,14 @@ angular.module('tobiaspalmerApp')
    		}
 
    		$scope.frisbee = function(){
-     			var windLimit = 4;
+     			var windLimit = 5;
      			var tempLimit = 10;
 
           if(currentHour < 21 && currentHour > 6){
          			if($scope.currentWeather.t < tempLimit && $scope.currentWeather.ws > windLimit){
          				return "Är du helt galen!? Det både blåser och är kallt!"
          			}
-         			else if($scope.currentWeather.t >=tempLimit && $scope.currentWeather.ws > windLimit){
+         			else if($scope.currentWeather.t >= tempLimit && $scope.currentWeather.ws > windLimit){
          				return "Det är ju tillräckligt varmt men din frisbee kommer blåsa iväg!"
          			}
          			else if($scope.currentWeather.t < tempLimit && $scope.currentWeather.ws <= windLimit){
@@ -101,7 +101,6 @@ angular.module('tobiaspalmerApp')
           }).success(function(data, status, headers, config) {
 
             deferred.resolve(data);
-
             console.log("success");
 
           }).error(function(data, status, headers, config) {

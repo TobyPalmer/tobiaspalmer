@@ -226,7 +226,7 @@ angular.module('tobiaspalmerApp')
     		grade:4,
     		date:"2012-06-28",
             languages: ["C++"],
-            frameworks: ["Ogre3D"],
+            frameworks: ["Ogre3D", "Bullet physics", "3DSMax"],
             video: "",
             description:""
     	},
@@ -391,7 +391,7 @@ angular.module('tobiaspalmerApp')
     		grade:3,
     		date:"2014-08-12",
             languages: ["C++"],
-            frameworks: [""],
+            frameworks: ["OpenGL"],
             video: "",
             description:""
     	},
@@ -468,10 +468,23 @@ angular.module('tobiaspalmerApp')
     		grade:4,
     		date:"2015-02-03",
             languages: ["Python"],
-            frameworks: [""],
+            frameworks: ["Maya"],
             video: "",
             description:"Min projektgrupp gjorde ett flockingplugin till Maya baserat på Boids algorithm."
-    	}];
+    	},
+        {
+            code:"TQME33",
+            name:"Examensarbete (Masters thesis)",
+            hp:30,
+            grade:0,
+            date:"2015-06-10",
+            languages: ["Javascript"],
+            frameworks: ["Angular", "Protractor", "Codeship (CI)", "Node", "Prism", "Gulp", "NgMockE2E", "NgMock"],
+            video: "",
+            description:"Automated end-to-end testing on single page web applications"
+
+
+        }];
 
         this.getCourses = function(){
             return courses;

@@ -1,26 +1,33 @@
 
-<div class="row">
-	<div class="persentation">
-		<img class="col-md-3 col-xs-3" ng-src="{{profilePic}}" alt="profilePic" spinner-on-load />
-		<h1 class="col-md-9 col-xs-9 center">
-			Hej jag heter Tobias!
+<div class="row jumbotron">
+		<img class="col-md-4 col-xs-4 profilepic" ng-src="{{profilePic}}" alt="profilePic" spinner-on-load />
+		<h1 class="col-md-8 col-xs-8 center">
+			Hi there!
 		</h1>
-		<p>
-			Jag kommer från tranås och det är roligt för att där kan man bada i en sjö som är varm på sommaren
+		<p class="col-md-8 col-xs-8 ">
+			I recently got my masters degree in media technology at Linköping University. 
 		</p>
+</div>
+
+<div class="row">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h2>Experience from school</h2>
+		</div>
+		<div class="panel-body">
+			<div class="languages col-md-6">
+				<b>Programming languages</b>
+				<ul>
+					<li ng-repeat="language in languages">{{language}}</li>
+				</ul>
+			</div>
+
+			<div class="frameworks col-md-6">
+				<b>Programming frameworks</b>
+				<ul>
+					<li ng-repeat="framework in frameworks">{{framework}}</li>
+				</ul>
+			</div>
+		</div>
 	</div>
-</div>
-
-<div class="languages">
-	Programming languages
-	<ul>
-		<li ng-repeat="language in languages">{{language}}</li>
-	</ul>
-</div>
-
-<div class="frameworks">
-	Programming frameworks
-	<ul>
-		<li ng-repeat="framework in frameworks">{{framework}}</li>
-	</ul>
 </div>
