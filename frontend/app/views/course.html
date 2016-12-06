@@ -1,18 +1,16 @@
 <div class="course">
 	<h3>{{course.code}} - {{course.name}} - {{course.hp}}hp</h3>
-	Avklarad: {{course.date}}
+	<span class="completed-text">Avklarad: {{course.date}}</span>
 
-	<div>
+	<div class="course-languages">
 		<button ng-show="hasLanguages()" ng-repeat="language in course.languages" type="button" class="btn btn-default btn-default languageButton" disabled="disabled">{{language}}</button>
 	</div>
 	
-	<div>
+	<div class="course-frameworks">
 		<button ng-show="hasFrameworks()" ng-repeat="framework in course.frameworks" type="button" class="btn btn-default btn-primary frameworkButton" disabled="disabled">{{framework}}</button>
 	</div>
 
-
-
-	{{course.description}}
+	Description: {{course.description}}
 
 	<youtube code='course.video'></youtube>
 

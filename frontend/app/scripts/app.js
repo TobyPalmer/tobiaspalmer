@@ -16,7 +16,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngFacebook'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -43,6 +44,22 @@ angular
       .when('/derive', {
         templateUrl: 'views/derive.html',
         controller: 'DeriveCtrl'
+      })
+      .when('/sill', {
+        templateUrl: 'views/sill.html',
+        controller: 'SillCtrl'
+      })
+      .when('/lobbys', {
+        templateUrl: 'views/lobbys.html',
+        controller: 'LobbysCtrl'
+      })
+      .when('/lobbys/:name', {
+        templateUrl: 'views/lobby.html',
+        controller: 'LobbysCtrl'
+      })
+      .when('/frippe', {
+        templateUrl: 'scripts/frippe/frippe.html',
+        controller: 'FrippeCtrl'
       })
       .otherwise({
         redirectTo: '/'

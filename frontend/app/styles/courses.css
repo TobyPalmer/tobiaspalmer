@@ -1,0 +1,28 @@
+.course-languages {
+	margin-bottom: 10px;
+}
+
+.completed-text {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.languageButton {
+	margin-right: 3px;
+}
+
+.course-frameworks {
+	margin-bottom: 30px;
+}
+
+.frameworkButton {
+	margin-right: 3px;
+}
+
+.programming-toggle {
+	margin-bottom: 10px;
+}
+
+.programming-toggle {
+	cursor: pointer;
+}

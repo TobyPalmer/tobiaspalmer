@@ -1,0 +1,55 @@
+<!-- <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div> -->
+
+<h4>
+    {{welcomeMsg}}
+</h4>
+<button type="button" ng-click="login()" ng-hide="isLoggedIn" ng-show="isLoggedIn === false" class="btn btn-default navbar-btn">
+    Login
+</button>
+<button type="button" ng-click="logout()" ng-show="isLoggedIn" ng-hide="isLoggedIn === false" class="btn btn-default navbar-btn">
+    Log out
+</button>
+
+<button ng-click="getFriends()">get friends</button>
+
+<select ng-change="selectFriend()" ng-model="selectedFriendId">
+  <option ng-repeat="friend in friends" value="{{friend.id}}">{{friend.name}}</option>
+</select>
+
+<div>
+	<button disabled ng-repeat="f in selectedFriends">{{f.name}}</button>
+</div>
+
+<div>
+	<button>back</button>
+</div>
+
+<div>
+	<table>
+
+		<tr ng-repeat="friend in friends">
+			<td>{{friend.name}}</td>
+			<td><input class="number-input" type="number" value="{{course[currentHole].score}}"></input></td>
+		</tr>
+	</table>
+</div>
+
+<div>
+	<button>button</next>
+</div>
+
+
+
+<table class="table">
+	<th>
+		<td ng-repeat="friend in friends">{{friend.name}}</td>
+	</th>
+
+	<tr ng-repeat="hole in course"><td ng-repeat="friend in friends"><input class="number-input" type="number" value="{{hole.score}}"></input></td></tr>
+
+</table>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<title>Vinterkravall-N 2016</title>
+<meta name="description" content="">
+
+<meta name="robots" content="all">
+<meta name="generator" content="One.com Web Editor">
+<meta http-equiv="Cache-Control" content="must-revalidate, max-age=0, public">
+<meta http-equiv="Expires" content="-1">
+
+<link rel="stylesheet" href="//vinterkravall-n.se/onewebstatic/8b155f23f1.css">
+</head>
+<body class="body blockbody">
+<div class="component  stretch template" style="min-width:950px;">
+<div class="self">
+<div class="row" style="min-height:505px;width:950px;margin:auto;">
+<div class="extra" style="margin:234px 119px 0px 118px;">
+<div class="chrome-border-fix image component  block idFA8C1C7AAC6745E8871022769ED93D2D" style="width:713px;">
+<div class="imageself self" style="width:713px;height:271px;" onclick="if(event.target ===  this) {event.stopPropagation();}">
+<img data-scalestrategy="crop" width="713" height="271" class="mobile-fit" src="//vinterkravall-n.se/onewebstatic/d795a68153-vk16-Vinterkravall-N.png" style="display:block;"></div>
+</div>
+</div>
+</div>
+<div class="row" style="min-height:258px;width:950px;margin:auto;">
+<div class="extra" style="margin:29px 189px 0px 188px;">
+<div class="component  " style="width:573px;">
+<div class="code self" style="width:573px;min-height:229px;">
+<script>
+var end = new Date('01/24/2016 8:1 PM');
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = '00:00:00';
+
+            return;
+        }
+        var days = ("00" + Math.floor(distance / _day)).substr(-2);
+        var hours = ("00" + Math.floor((distance % _day) / _hour)).substr(-2);
+        var minutes = ("00" + Math.floor((distance % _hour) / _minute)).substr(-2);
+        var seconds = ("00" + Math.floor((distance % _minute) / _second)).substr(-2);
+
+        document.getElementById('countdown').innerHTML = days + ':';
+        document.getElementById('countdown').innerHTML += hours + ':';
+        document.getElementById('countdown').innerHTML += minutes + ':';
+        document.getElementById('countdown').innerHTML += seconds;
+    }
+
+    timer = setInterval(showRemaining, 1000);
+</script>
+<div id="countdown" style="color:#cfb53b;font-family:digital-7;font-size:200px;font-size:5vw"></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="row" style="min-height:374px;width:950px;margin:auto;">
+<div class="extra" style="margin:354px 0px 0px 0px;min-width:100%;">
+<div class="component  block id7820D67B6784427B81F240DE2E4E5EDD" style="width:950px;">
+<div class="self" style="width:950px;min-height:20px;" onclick="if(event.target ===  this) {event.stopPropagation();}">
+</div>
+</div>
+</div>
+</div>
+<div style="clear:both"></div>
+</div>
+</div>
+<footer>
+</footer>
+<div class="end"></div>
+<script src="//vinterkravall-n.se/onewebstatic/13a7df85d5.js"></script>
+</body>
+</html>

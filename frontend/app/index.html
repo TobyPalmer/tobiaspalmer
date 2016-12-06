@@ -27,6 +27,9 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/frippe.css">
+    <link rel="stylesheet" href="styles/sill.css">
+    <link rel="stylesheet" href="styles/courses.css">
     <!-- endbuild -->
   </head>
   <body ng-app="tobiaspalmerApp">
@@ -35,9 +38,42 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+
+
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right" ng-controller="MenuCtrl">
+    <nav class="navbar">
+      <div class="container-fluid center">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="#/">tobiaspalmer.se</a>
+          <!-- <a class="navbar-brand nounderline" ng-href="#/"><h3 class="text-muted">tobiaspalmer.se</h3></a> -->
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right menu" ng-controller="MenuCtrl">
+              <li ng-class="isActive('/')"><a ng-href="#/">Home</a></li>
+              <li ng-class="isActive('/courses')"><a ng-href="#/courses">Courses</a></li>
+              <li ng-class="isActive('/contact')"><a ng-href="#/contact">Contact</a></li>
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                  Other stuff <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li ng-class="isActive('/frisbee')"><a ng-href="#/frisbee">Frisbee</a></li>
+                  <!-- <li ng-class="isActive('/lobbys')"><a ng-href="#/lobbys">Lobbys</a></li> -->
+                  <li ng-class="isActive('/derive')"><a ng-href="#/derive">Derive</a></li>
+                  <li ng-class="isActive('/sill')"><a ng-href="#/sill">Sill</a></li>
+                </ul>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!--       <div class="header side-collapse in">
+        <ul class="nav nav-pills pull-right navbar-nav" ng-controller="MenuCtrl">
           <li ng-class="isActive('/')"><a ng-href="#/">Home</a></li>
           <li ng-class="isActive('/courses')"><a ng-href="#/courses">Courses</a></li>
           <li ng-class="isActive('/contact')"><a ng-href="#/contact">Contact</a></li>
@@ -48,14 +84,15 @@
             </a>
             <ul class="dropdown-menu">
               <li ng-class="isActive('/frisbee')"><a ng-href="#/frisbee">Frisbee</a></li>
+              <li ng-class="isActive('/lobbys')"><a ng-href="#/lobbys">Lobbys</a></li>
               <li ng-class="isActive('/derive')"><a ng-href="#/derive">Derive</a></li>
             </ul>
           </li>
 
           
         </ul>
-        <a class="nounderline" ng-href="#/"><h3 class="text-muted">tobiaspalmer.se</h3></a>
-      </div>
+        <a class="nounderline col-xs-2" ng-href="#/"><h3 class="text-muted">tobiaspalmer.se</h3></a>
+      </div> -->
 
       <div ng-view=""></div>
 
@@ -87,13 +124,15 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/ng-facebook/ngFacebook.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -108,6 +147,10 @@
         <script src="scripts/controllers/menu.js"></script>
         <script src="scripts/controllers/deriveString.js"></script>
         <script src="scripts/controllers/derive.js"></script>
+        <script src="scripts/controllers/sill.js"></script>
+        <script src="scripts/controllers/lobbys.js"></script>
+        <script src="scripts/frippe/frippeController.js"></script>
+        <script src="scripts/frippe/fbService.js"></script>
         <!-- endbuild -->
 </body>
 </html>

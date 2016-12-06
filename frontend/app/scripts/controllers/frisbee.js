@@ -23,6 +23,7 @@ angular.module('tobiaspalmerApp')
 	   	weatherService.getWeather().then(function(data){
    			$scope.weatherData = data;
    			console.log($scope.weatherData);
+        console.log(getCurrentTimeIndex());
    			$scope.currentWeather = $scope.weatherData.timeseries[getCurrentTimeIndex()];
    			console.log($scope.currentWeather);
    		});
@@ -40,6 +41,7 @@ angular.module('tobiaspalmerApp')
         }
         else{
             referencetime = $scope.weatherData.referenceTime[11] + $scope.weatherData.referenceTime[12];
+            console.log(referencetime);
         }
 
         if(_date[0] == 0){

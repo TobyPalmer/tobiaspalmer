@@ -1,0 +1,19 @@
+
+<input type="text" value="lobbyname", ng-model="lobbyname"></input>
+<input type="number" name="quantity" min="1" max="5", ng-model="maxplayers"></input>
+
+<button ng-click="addLobby(lobbyname,maxplayers)">Add lobby</button>
+
+<table class="lobbyTable">
+	<tr>
+		<td>Lobbyname</td>
+		<td>Maxplayers</td>
+		<td>Id</td>
+	</tr>
+	<tr ng-repeat="lobby in lobbys">
+		<td>{{lobby.name}}</td>
+		<td>{{lobby.maxplayers}}</td> 
+		<td>id:{{lobby.id}}</td>
+		<td><a href="#/lobbys/{{lobby.id}}">Join Lobby</a></td>
+	</tr>
+</table>

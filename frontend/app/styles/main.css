@@ -2,6 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -24,12 +25,43 @@ body {
   padding-bottom: 19px;
 }
 
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:hover,
-.nav-pills > li.active > a:focus {
+.navbar-nav > li.active > a,
+.navbar-nav > li.active > a:hover,
+.navbar-nav > li.active > a:focus {
   color: #337ab7;
   background-color: #ffffff;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.navbar-nav > li > a,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  background-color: #ffffff;
+}
+
+.navbar-brand {
+  padding-left: 0;
+}
+
+.menu:last-child a {
+  padding-right: 0;
+}
+
+.frameworkButton {
+    color: #000;
+}
+
+.navbar-toggle {
+  background-color: #337ab7;
+}
+
+.icon-bar{
+  background-color:#fff;
+}
+
+
+.lobbyTable {
+  width: 100%;
 }
 
 .profilepic {
@@ -55,6 +87,28 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+}
+
+.clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+ }
+
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+.glyphicon {
+  margin-right: 5px;
+}
+
+.linkedin-link {
+  padding-left: 3px;
 }
 
 /* Customize container */

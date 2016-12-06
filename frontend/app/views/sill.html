@@ -1,0 +1,24 @@
+<!-- <h1>Sill</h1> -->
+<div class="recipe clearfix" ng-repeat="sill in sills">
+	<h1>{{sill.name}}</h1>
+
+	<p class="food-description"> {{sill.description}} </p>
+
+	<div class="image-container col-md-8">
+		<img class ="food-image" src="{{sill.image}}" alt="sill image {{sill.name}}"/>
+		<div class="stars">
+			<span ng-repeat="index in sill.rating" class="glyphicon {{index===0 ? 'glyphicon-star-empty': 'glyphicon-star'}}"></span>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<label for="numberOfPortionsInput">Antal portioner: </label> <br>
+		<input class="portions-input" id="numberOfPortionsInput" type="number" ng-model="numberOfPortions" ng-change="updateQuantity(numberOfPortions)"></input>
+
+		<ul class="ingredient-list" ng-repeat="ingredient in sill.ingredients">
+			<li>
+				 <span ng-if="ingredient.textOnly == undefined">{{ingredient.quantity}} {{ingredient.unit}}</span><span> {{ingredient.name}}</span>
+			</li>
+		</ul>
+	</div>
+
+</div>
