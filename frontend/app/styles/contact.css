@@ -1,0 +1,15 @@
+
+.contactInfo ul {
+	padding-left: 0;
+	border-left: 3px solid #337ab7;
+}
+
+.contactInfo li {
+	list-style-type: none;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+.contactInfo span {
+
+}

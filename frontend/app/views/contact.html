@@ -1,7 +1,11 @@
-<h1>Contact information</h1>
-<div>
-	<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-user"></span> {{contactInfo.fname}} {{contactInfo.lname}}</div>
-	<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-phone"></span> {{contactInfo.phone}}</div>
-	<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-envelope"></span> {{contactInfo.mail}}</div>
-	<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-home"></span><a class="linkedin-link" href="{{contactInfo.linkedinURL}}">Linked In</a></div>
-</div>
+<header>
+	<h1>Contact information</h1>
+</header>
+<section class="contactInfo">
+	<ul>
+		<li><span class="glyphicon glyphicon-user"></span> {{contactInfo.fname}} {{contactInfo.lname}}</li>
+		<li><span class="glyphicon glyphicon-phone"></span> {{contactInfo.phone}}</li>
+		<li><span class="glyphicon glyphicon-envelope"></span> {{contactInfo.mail}}</li>
+		<li><span class="glyphicon glyphicon-home"></span><a class="linkedin-link" href="{{contactInfo.linkedinURL}}">Linked In</a></li>
+	</ul>
+</section>

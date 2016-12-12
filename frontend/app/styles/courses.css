@@ -7,16 +7,18 @@
 	margin-bottom: 10px;
 }
 
-.languageButton {
+.languageButton,
+.frameworkButton {
 	margin-right: 3px;
+}
+
+.languageButton:disabled,
+.frameworkButton:disabled {
+	opacity: 1;
 }
 
 .course-frameworks {
 	margin-bottom: 30px;
-}
-
-.frameworkButton {
-	margin-right: 3px;
 }
 
 .programming-toggle {

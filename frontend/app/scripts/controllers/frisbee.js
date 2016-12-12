@@ -16,16 +16,19 @@ angular.module('tobiaspalmerApp')
 		var Longitude = 16.18;
 
 		$scope.weatherData = {};
-		$scope.currentWeather = {};
+    $scope.currentWeather = {};
+
     var currentHour;
 
 
 	   	weatherService.getWeather().then(function(data){
    			$scope.weatherData = data;
-   			console.log($scope.weatherData);
-        console.log(getCurrentTimeIndex());
-   			$scope.currentWeather = $scope.weatherData.timeseries[getCurrentTimeIndex()];
-   			console.log($scope.currentWeather);
+   			console.log($scope.weatherData, "weatherdata");
+        console.log(getCurrentTimeIndex(), "current time index");
+   			$scope.currentWeather = $scope.weatherData.timeSeries[getCurrentTimeIndex()];
+   			console.log($scope.currentWeather, 'currentweather');
+        $scope.currentWeather.temp = $scope.getTemp();
+        $scope.currentWeather.wind = $scope.getWind();
    		});
 
 
@@ -56,25 +59,27 @@ angular.module('tobiaspalmerApp')
    		}
 
    		$scope.getTemp = function(){
-   			return $scope.currentWeather.t;
+        // Getting the temp
+   			return $scope.currentWeather.parameters[1].values[0];
    		}
 
    		$scope.getWind = function(){
-   			return $scope.currentWeather.ws;
+        // Getting the wind speed
+   			return $scope.currentWeather.parameters[4].values[0];
    		}
 
-   		$scope.frisbee = function(){
+   		$scope.frisbeeText = function(){
      			var windLimit = 5;
      			var tempLimit = 10;
 
           if(currentHour < 21 && currentHour > 6){
-         			if($scope.currentWeather.t < tempLimit && $scope.currentWeather.ws > windLimit){
+         			if($scope.getTemp() < tempLimit && $scope.getWind() > windLimit){
          				return "Är du helt galen!? Det både blåser och är kallt!"
          			}
-         			else if($scope.currentWeather.t >= tempLimit && $scope.currentWeather.ws > windLimit){
+         			else if($scope.getTemp() >= tempLimit && $scope.getWind() > windLimit){
          				return "Det är ju tillräckligt varmt men din frisbee kommer blåsa iväg!"
          			}
-         			else if($scope.currentWeather.t < tempLimit && $scope.currentWeather.ws <= windLimit){
+         			else if($scope.getTemp() < tempLimit && $scope.getWind() <= windLimit){
          				return "Det är ju svinkallt men det blåser ju inte så mycket!"
          			}
          			else{
@@ -99,7 +104,8 @@ angular.module('tobiaspalmerApp')
 	  	var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/58.59/lon/16.18/data.json'
+            // url: 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/58.59/lon/16.18/data.json'
+            url: 'http://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/16.158/lat/58.5812/data.json'
           }).success(function(data, status, headers, config) {
 
             deferred.resolve(data);

@@ -8,10 +8,15 @@
  * Controller of the tobiaspalmerApp
  */
 angular.module('tobiaspalmerApp')
-  .controller('CoursesCtrl', function ($scope, CourseService) {
+  .controller('CoursesCtrl', function ($scope, $location ,CourseService) {
+    $scope.searchString = $location.hash();
     $scope.courses = CourseService.getCourses();
     $scope.coursesShowing = "Programming Courses";
     var programmingCoursesShowing = false;
+
+    if($location.hash() !== '') {
+        $scope.courses = CourseService.searchCourses($scope.searchString);
+    }
 
     $scope.toggleProgrammingCourses = function(){
     	if(!programmingCoursesShowing){

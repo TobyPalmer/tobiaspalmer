@@ -496,7 +496,7 @@ angular.module('tobiaspalmerApp')
             for (var key in courses) {
                 if (courses.hasOwnProperty(key)) {
                     var obj = courses[key];
-                    if(obj.languages[0] != "")
+                    if(obj.languages[0] !== "")
                         programmingCourses.push(obj);
                 }
             }
@@ -508,7 +508,7 @@ angular.module('tobiaspalmerApp')
             for (var key in courses) {
                 if (courses.hasOwnProperty(key)) {
                     var obj = courses[key];
-                    if(obj.code == course){
+                    if(obj.code === course){
                         return obj;
                     }
                 }
@@ -520,7 +520,7 @@ angular.module('tobiaspalmerApp')
             for (var key in courses) {
                 if (courses.hasOwnProperty(key)) {
                     var obj = courses[key];
-                    if(obj.languages[0] != ""){
+                    if(obj.languages[0] !== ""){
                         for(var i = 0; i < obj.languages.length; i++){
                             programmingLanguages.push(obj.languages[i]);
                         }
@@ -536,7 +536,7 @@ angular.module('tobiaspalmerApp')
             for (var key in courses) {
                 if (courses.hasOwnProperty(key)) {
                     var obj = courses[key];
-                    if(obj.frameworks[0] != ""){
+                    if(obj.frameworks[0] !== ""){
                         for(var i = 0; i < obj.frameworks.length; i++){
                             programmingFrameworks.push(obj.frameworks[i]);
                         }
@@ -547,5 +547,27 @@ angular.module('tobiaspalmerApp')
             return programmingFrameworks;
         };
 
+        this.searchCourses = function(searchString) {
+            var searchResult = [];
+            for (var key in courses) {
+                if (courses.hasOwnProperty(key)) {
+                    var obj = courses[key];
+                    if(obj.languages[0] !== ""){
+                        for(var i = 0; i < obj.languages.length; i++){
+                            if(obj.languages[i].toLowerCase() === searchString.toLowerCase())
+                                searchResult.push(obj);
+                        }
+                    }
+                    if(obj.frameworks[0] !== ""){
+                        for(var i = 0; i < obj.frameworks.length; i++){
+                            if(obj.frameworks[i].toLowerCase() === searchString.toLowerCase())
+                                searchResult.push(obj);
+                        }
+                    }
+                }
+            }
+
+            return searchResult;
+        };
   });
 
